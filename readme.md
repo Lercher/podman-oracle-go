@@ -8,11 +8,20 @@ Podman is a replacement for Docker. Its adavantage is
 mainly that it doesn't require root rights for
 running containers.
 
-## Bringing an Oracle Instance Online Using Podman
+## Pulling an Oracle DBMS Using Podman
 
-1. First step is to get an account on the [Docker Hub](https://hub.docker.com/)
+### TL;DR
 
-Then you can pull the slim image, can't you?
+* Get a docker hub account and login
+* Get an Oracle License for Development
+* Find and checkout the image at [Oracle Database Enterprise Edition](https://hub.docker.com/_/oracle-database-enterprise-edition?tab=description)
+* `sudo -i` as we need root rights here
+* as root login with podman on docker.io
+* and then `podman pull store/oracle/database-enterprise:12.2.0.1-slim` as root, finally.
+
+### In Detail
+
+The first step is to get an account on the [Docker Hub](https://hub.docker.com/). Then we can pull the slim image, can't we?
 
 ````sh
 lercher@linux-pm81:~> podman login docker.io
@@ -29,17 +38,13 @@ Error: error pulling image "store/oracle/database-enterprise:12.2.0.1-slim": una
         * Error initializing source docker://store/oracle/database-enterprise:12.2.0.1-slim: Error reading manifest 12.2.0.1-slim in docker.io/store/oracle/database-enterprise: errors:
 denied: requested access to the resource is denied
 unauthorized: authentication required
-
-
-
-lercher@linux-pm81:~>
 ````
 
-No, it's personalized:
+No. It's personalized. So:
 
 1. Search for "Oracle Database Enterprise Edition" and then navigate to [Oracle Database Enterprise Edition](https://hub.docker.com/_/oracle-database-enterprise-edition?tab=description) on the hub.
 1. You need to "Proceed to checkout" and then verify that you are licensed
-1. agree the conditions
+1. Agree on the terms and conditions
 
 Now we can pull the slim image, can't we?
 
@@ -63,7 +68,7 @@ Error: error pulling image "store/oracle/database-enterprise:12.2.0.1-slim": una
 lercher@linux-pm81:~>
 ````
 
-Well, no. Apparently the image needs root rights. Let's try again:
+Well, no again. Apparently the image needs root rights. Let's try again:
 
 ````sh
 lercher@linux-pm81:~> sudo podman pull store/oracle/database-enterprise:12.2.0.1-slim
@@ -76,13 +81,9 @@ Error: error pulling image "store/oracle/database-enterprise:12.2.0.1-slim": una
         * Error initializing source docker://store/oracle/database-enterprise:12.2.0.1-slim: Error reading manifest 12.2.0.1-slim in docker.io/store/oracle/database-enterprise: errors:
 denied: requested access to the resource is denied
 unauthorized: authentication required
-
-
-
-lercher@linux-pm81:~>
 ````
 
-Ah, yes. So:
+Ah, yes, we are not logged in on docker.io, b/c we are root now. So ...
 
 ````sh
 lercher@linux-pm81:~> sudo -i
@@ -100,7 +101,39 @@ Copying blob 4ce27fe12c04 [==>-----------------------------------] 6.1MiB / 79.4
 ...
 ````
 
-... download 2.4GB again ...
+... pull 2.4GB, *again*, as root, but finally:
+
+````sh
+linux-pm81:~ # podman pull store/oracle/database-enterprise:12.2.0.1-slim
+Trying to pull docker.io/store/oracle/database-enterprise:12.2.0.1-slim...Getting image source signatures
+Copying blob 9d3556e8e792 done
+Copying blob be0a1f1e8dfd done
+Copying blob 0c32e4ed872e done
+Copying blob fc60a1a28025 done
+Copying blob 4ce27fe12c04 done
+Copying config 27c9559d36 done
+Writing manifest to image destination
+Storing signatures
+27c9559d36ec85fdaa42111ebc55076a63e842ddbe67e0849cdc59b4f6a6f7a1
+linux-pm81:~ # podman images
+REPOSITORY                                   TAG             IMAGE ID       CREATED         SIZE
+...
+docker.io/store/oracle/database-enterprise   12.2.0.1-slim   27c9559d36ec   24 months ago   2.1 GB
+...
+linux-pm81:~ #
+````
+
+That looks like **success**. Probably we need to *run* the container as root as well:
+
+````sh
+linux-pm81:~ # exit
+logout
+lercher@linux-pm81:~> podman images
+REPOSITORY   TAG   IMAGE ID   CREATED   SIZE
+lercher@linux-pm81:~>
+````
+
+That's right, we don't have any images as unprivileged user.
 
 ## Resources
 
