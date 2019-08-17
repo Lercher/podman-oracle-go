@@ -45,6 +45,7 @@ No. It's personalized. So:
 1. Search for "Oracle Database Enterprise Edition" and then navigate to [Oracle Database Enterprise Edition](https://hub.docker.com/_/oracle-database-enterprise-edition?tab=description) on the hub.
 1. You need to "Proceed to checkout" and then verify that you are licensed
 1. Agree on the terms and conditions
+1. The hub displays [instructions (copy)](ora.md), have a look.
 
 Now we can pull the slim image, can't we?
 
@@ -139,3 +140,4 @@ That's right, we don't have any images as unprivileged user.
 
 * [Nutzung von Oracle Datenbanken in Docker Containern](https://apex.oracle.com/pls/apex/germancommunities/dbacommunity/tipp/6241/index.html) by Ralf Durben (in German)
 * [Docker Hub](https://hub.docker.com/)
+* [Instructions (copy)](ora.md) on the DBMS image's use.
