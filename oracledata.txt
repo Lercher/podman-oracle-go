@@ -15,30 +15,33 @@ diag  product
 rdbms  tnslsnr
 
 /oracledata/u01/app/oracle/diag/rdbms:
-orclcdb
+ora1
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb:
-ORCLCDB  i_1.mif
+/oracledata/u01/app/oracle/diag/rdbms/ora1:
+ORA1  i_1.mif
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1:
+ORCLCDB  alert  cdump  hm  incident  incpkg  ir  lck  log  metadata  metadata_dgif  metadata_pv  stage  sweep  trace
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB:
 ORCL  alert  cdump  hm  incident  incpkg  ir  lck  log  metadata  metadata_dgif  metadata_pv  stage  sweep  trace
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/ORCL:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/ORCL:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/alert:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/alert:
 log.xml
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/cdump:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/cdump:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/hm:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/hm:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/incident:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/incident:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/incpkg:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/incpkg:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/ir:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/ir:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/lck:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/lck:
 AM_1096102193_3488045378.lck  AM_1737460353_941080040.lck   AM_2485072945_164397129.lck   AM_4123867812_464947195.lck
 AM_1096102262_3454819329.lck  AM_1744845641_3861997533.lck  AM_2569157681_2857696958.lck  AM_423666793_1876373544.lck
 AM_117463809_1252689677.lck   AM_1762783_4031814035.lck     AM_2876149918_855262320.lck   AM_4294531585_3603614071.lck
@@ -53,20 +56,20 @@ AM_1506961005_3222638125.lck  AM_2087871759_1054152112.lck  AM_3222012286_854140
 AM_1521063874_363843526.lck   AM_2099277876_66242055.lck    AM_3293835190_3462375459.lck
 AM_1618_3044626670.lck        AM_2133151281_4062580841.lck  AM_3293841721_1014909846.lck
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log:
 ddl  debug  hcs  imdb  test
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log/ddl:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log/ddl:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log/debug:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log/debug:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log/hcs:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log/hcs:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log/imdb:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log/imdb:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log/test:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log/test:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/metadata:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/metadata:
 ADR_CONTROL.ams                    DFW_PATCH_CAPTURE.ams  INCCKEY.ams             IPS_PACKAGE_HISTORY.ams
 ADR_CONTROL_AUX.ams                DFW_PATCH_ITEM.ams     INCIDENT.ams            IPS_PACKAGE_INCIDENT.ams
 ADR_INTERNAL.mif                   DFW_PURGE.ams          INCIDENT_FILE.ams       IPS_PACKAGE_UNPACK_HISTORY.ams
@@ -81,49 +84,119 @@ DDE_USER_INCIDENT_TYPE.ams         HM_MESSAGE.ams         IPS_FILE_METADATA.ams 
 DFW_CONFIG_CAPTURE.ams             HM_RECOMMENDATION.ams  IPS_PACKAGE.ams         VIEWCOL.ams
 DFW_CONFIG_ITEM.ams                HM_RUN.ams             IPS_PACKAGE_FILE.ams
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/metadata_dgif:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/metadata_dgif:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/metadata_pv:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/metadata_pv:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/stage:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/stage:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/sweep:
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/sweep:
 
-/oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/trace:
-ORCLCDB_aqpc_156.trc         ORCLCDB_fenc_130.trm  ORCLCDB_mmnl_230.trc      ORCLCDB_ora_49.trm
-ORCLCDB_aqpc_156.trm         ORCLCDB_fenc_226.trc  ORCLCDB_mmnl_230.trm      ORCLCDB_ora_563.trc
-ORCLCDB_aqpc_254.trc         ORCLCDB_fenc_226.trm  ORCLCDB_mmon_130.trc      ORCLCDB_ora_563.trm
-ORCLCDB_aqpc_254.trm         ORCLCDB_gen0_176.trc  ORCLCDB_mmon_130.trm      ORCLCDB_ora_66.trc
-ORCLCDB_dbrm_192.trc         ORCLCDB_gen0_176.trm  ORCLCDB_mmon_132.trc      ORCLCDB_ora_66.trm
-ORCLCDB_dbrm_192.trm         ORCLCDB_gen0_78.trc   ORCLCDB_mmon_132.trm      ORCLCDB_qm02_383.trc
-ORCLCDB_dbrm_94.trc          ORCLCDB_gen0_78.trm   ORCLCDB_mmon_228.trc      ORCLCDB_qm02_383.trm
-ORCLCDB_dbrm_94.trm          ORCLCDB_gen0_80.trc   ORCLCDB_mmon_228.trm      ORCLCDB_svcb_100.trc
-ORCLCDB_dbrm_96.trc          ORCLCDB_gen0_80.trm   ORCLCDB_ofsd_188_190.trc  ORCLCDB_svcb_100.trm
-ORCLCDB_dbrm_96.trm          ORCLCDB_lg00_110.trc  ORCLCDB_ofsd_188_190.trm  ORCLCDB_svcb_196.trc
-ORCLCDB_dbw0_202.trc         ORCLCDB_lg00_110.trm  ORCLCDB_ofsd_90_92.trc    ORCLCDB_svcb_196.trm
-ORCLCDB_dbw0_202.trm         ORCLCDB_lg00_112.trc  ORCLCDB_ofsd_90_92.trm    ORCLCDB_svcb_98.trc
-ORCLCDB_dia0_102.trc         ORCLCDB_lg00_112.trm  ORCLCDB_ofsd_92_94.trc    ORCLCDB_svcb_98.trm
-ORCLCDB_dia0_102.trm         ORCLCDB_lg00_208.trc  ORCLCDB_ofsd_92_94.trm    ORCLCDB_tt02_154.trc
-ORCLCDB_dia0_102_base_1.trc  ORCLCDB_lg00_208.trm  ORCLCDB_ora_141.trc       ORCLCDB_tt02_154.trm
-ORCLCDB_dia0_102_base_1.trm  ORCLCDB_lg01_114.trc  ORCLCDB_ora_141.trm       ORCLCDB_tt02_250.trc
-ORCLCDB_dia0_104.trc         ORCLCDB_lg01_114.trm  ORCLCDB_ora_148.trc       ORCLCDB_tt02_250.trm
-ORCLCDB_dia0_104.trm         ORCLCDB_lg01_116.trc  ORCLCDB_ora_148.trm       ORCLCDB_vkrm_194.trc
-ORCLCDB_dia0_104_base_1.trc  ORCLCDB_lg01_116.trm  ORCLCDB_ora_149.trc       ORCLCDB_vkrm_194.trm
-ORCLCDB_dia0_104_base_1.trm  ORCLCDB_lg01_212.trc  ORCLCDB_ora_149.trm       ORCLCDB_vkrm_96.trc
-ORCLCDB_dia0_200.trc         ORCLCDB_lg01_212.trm  ORCLCDB_ora_162.trc       ORCLCDB_vkrm_96.trm
-ORCLCDB_dia0_200.trm         ORCLCDB_lgwr_106.trc  ORCLCDB_ora_162.trm       ORCLCDB_vkrm_98.trc
-ORCLCDB_dia0_200_base_1.trc  ORCLCDB_lgwr_106.trm  ORCLCDB_ora_196.trc       ORCLCDB_vkrm_98.trm
-ORCLCDB_dia0_200_base_1.trm  ORCLCDB_lgwr_108.trc  ORCLCDB_ora_196.trm       ORCLCDB_vktm_172.trc
-ORCLCDB_diag_186.trc         ORCLCDB_lgwr_108.trm  ORCLCDB_ora_239.trc       ORCLCDB_vktm_172.trm
-ORCLCDB_diag_186.trm         ORCLCDB_lgwr_204.trc  ORCLCDB_ora_239.trm       ORCLCDB_vktm_74.trc
-ORCLCDB_diag_88.trc          ORCLCDB_lgwr_204.trm  ORCLCDB_ora_244.trc       ORCLCDB_vktm_74.trm
-ORCLCDB_diag_88.trm          ORCLCDB_m000_499.trc  ORCLCDB_ora_244.trm       ORCLCDB_vktm_76.trc
-ORCLCDB_fenc_128.trc         ORCLCDB_m000_499.trm  ORCLCDB_ora_326.trc       ORCLCDB_vktm_76.trm
-ORCLCDB_fenc_128.trm         ORCLCDB_mmnl_134.trc  ORCLCDB_ora_326.trm       alert_ORCLCDB.log
-ORCLCDB_fenc_130.trc         ORCLCDB_mmnl_134.trm  ORCLCDB_ora_49.trc
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/trace:
+ORCLCDB_aqpc_254.trc         ORCLCDB_fenc_226.trc  ORCLCDB_mmon_130.trc      ORCLCDB_ora_563.trc
+ORCLCDB_aqpc_254.trm         ORCLCDB_fenc_226.trm  ORCLCDB_mmon_130.trm      ORCLCDB_ora_563.trm
+ORCLCDB_dbrm_192.trc         ORCLCDB_gen0_176.trc  ORCLCDB_mmon_228.trc      ORCLCDB_qm02_383.trc
+ORCLCDB_dbrm_192.trm         ORCLCDB_gen0_176.trm  ORCLCDB_mmon_228.trm      ORCLCDB_qm02_383.trm
+ORCLCDB_dbrm_94.trc          ORCLCDB_gen0_78.trc   ORCLCDB_ofsd_188_190.trc  ORCLCDB_svcb_196.trc
+ORCLCDB_dbrm_94.trm          ORCLCDB_gen0_78.trm   ORCLCDB_ofsd_188_190.trm  ORCLCDB_svcb_196.trm
+ORCLCDB_dbw0_202.trc         ORCLCDB_lg00_110.trc  ORCLCDB_ofsd_90_92.trc    ORCLCDB_svcb_98.trc
+ORCLCDB_dbw0_202.trm         ORCLCDB_lg00_110.trm  ORCLCDB_ofsd_90_92.trm    ORCLCDB_svcb_98.trm
+ORCLCDB_dia0_102.trc         ORCLCDB_lg00_208.trc  ORCLCDB_ora_141.trc       ORCLCDB_tt02_250.trc
+ORCLCDB_dia0_102.trm         ORCLCDB_lg00_208.trm  ORCLCDB_ora_141.trm       ORCLCDB_tt02_250.trm
+ORCLCDB_dia0_102_base_1.trc  ORCLCDB_lg01_114.trc  ORCLCDB_ora_149.trc       ORCLCDB_vkrm_194.trc
+ORCLCDB_dia0_102_base_1.trm  ORCLCDB_lg01_114.trm  ORCLCDB_ora_149.trm       ORCLCDB_vkrm_194.trm
+ORCLCDB_dia0_200.trc         ORCLCDB_lg01_212.trc  ORCLCDB_ora_162.trc       ORCLCDB_vkrm_96.trc
+ORCLCDB_dia0_200.trm         ORCLCDB_lg01_212.trm  ORCLCDB_ora_162.trm       ORCLCDB_vkrm_96.trm
+ORCLCDB_dia0_200_base_1.trc  ORCLCDB_lgwr_106.trc  ORCLCDB_ora_239.trc       ORCLCDB_vktm_172.trc
+ORCLCDB_dia0_200_base_1.trm  ORCLCDB_lgwr_106.trm  ORCLCDB_ora_239.trm       ORCLCDB_vktm_172.trm
+ORCLCDB_diag_186.trc         ORCLCDB_lgwr_204.trc  ORCLCDB_ora_244.trc       ORCLCDB_vktm_74.trc
+ORCLCDB_diag_186.trm         ORCLCDB_lgwr_204.trm  ORCLCDB_ora_244.trm       ORCLCDB_vktm_74.trm
+ORCLCDB_diag_88.trc          ORCLCDB_m000_499.trc  ORCLCDB_ora_326.trc       alert_ORCLCDB.log
+ORCLCDB_diag_88.trm          ORCLCDB_m000_499.trm  ORCLCDB_ora_326.trm
+ORCLCDB_fenc_128.trc         ORCLCDB_mmnl_230.trc  ORCLCDB_ora_49.trc
+ORCLCDB_fenc_128.trm         ORCLCDB_mmnl_230.trm  ORCLCDB_ora_49.trm
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/alert:
+log.xml
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/cdump:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/hm:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/incident:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/incpkg:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ir:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/lck:
+AM_1096102193_3488045378.lck  AM_1737460353_941080040.lck   AM_2485072945_164397129.lck   AM_4123867812_464947195.lck
+AM_1096102262_3454819329.lck  AM_1744845641_3861997533.lck  AM_2569157681_2857696958.lck  AM_423666793_1876373544.lck
+AM_117463809_1252689677.lck   AM_1762783_4031814035.lck     AM_2876149918_855262320.lck   AM_4294531585_3603614071.lck
+AM_1256574238_2295251304.lck  AM_1762885_3826749810.lck     AM_2904361128_3186785985.lck  AM_497148109_3359240142.lck
+AM_1317892465_764739657.lck   AM_1919660852_3200803573.lck  AM_3063883707_458774509.lck   AM_53417_1688101061.lck
+AM_1432227889_1110943450.lck  AM_1919660852_3403801080.lck  AM_3172236303_1050790107.lck  AM_53417_2985279723.lck
+AM_1477507928_3848095858.lck  AM_1919660854_3704060414.lck  AM_3216668543_3129272988.lck  AM_53419_3606358678.lck
+AM_1479503217_1058909787.lck  AM_1_2089646048.lck           AM_3216766131_2188903675.lck  AM_53421_2401899358.lck
+AM_1485693922_2937733126.lck  AM_2020575435_1685934094.lck  AM_3218196182_2691928421.lck  AM_58170159_2309433480.lck
+AM_1502621355_3638225870.lck  AM_2087871662_4269132395.lck  AM_3219651335_1369860572.lck  AM_58174112_2445060518.lck
+AM_1506961005_3222638125.lck  AM_2087871759_1054152112.lck  AM_3222012286_854140907.lck   AM_994187642_3287667720.lck
+AM_1521063874_363843526.lck   AM_2099277876_66242055.lck    AM_3293835190_3462375459.lck
+AM_1618_3044626670.lck        AM_2133151281_4062580841.lck  AM_3293841721_1014909846.lck
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log:
+ddl  debug  hcs  imdb  test
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log/ddl:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log/debug:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log/hcs:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log/imdb:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log/test:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/metadata:
+ADR_CONTROL.ams                    DFW_PATCH_CAPTURE.ams  INCCKEY.ams             IPS_PACKAGE_HISTORY.ams
+ADR_CONTROL_AUX.ams                DFW_PATCH_ITEM.ams     INCIDENT.ams            IPS_PACKAGE_INCIDENT.ams
+ADR_INTERNAL.mif                   DFW_PURGE.ams          INCIDENT_FILE.ams       IPS_PACKAGE_UNPACK_HISTORY.ams
+ADR_INVALIDATION.ams               DFW_PURGE_ITEM.ams     INC_METER_CONFIG.ams    IPS_PROGRESS_LOG.ams
+AMS_XACTION.ams                    EM_DIAG_JOB.ams        INC_METER_IMPT_DEF.ams  IPS_REMOTE_PACKAGE.ams
+DDE_USER_ACTION.ams                EM_TARGET_INFO.ams     INC_METER_INFO.ams      PDB_PROBLEM.ams
+DDE_USER_ACTION_DEF.ams            EM_USER_ACTIVITY.ams   INC_METER_PK_IMPTS.ams  PDB_SPACE_MGMT.ams
+DDE_USER_ACTION_PARAMETER.ams      HM_FDG_SET.ams         INC_METER_SUMMARY.ams   PICKLEERR.ams
+DDE_USER_ACTION_PARAMETER_DEF.ams  HM_FINDING.ams         IPS_CONFIGURATION.ams   PROBLEM.ams
+DDE_USER_INCIDENT_ACTION_MAP.ams   HM_INFO.ams            IPS_FILE_COPY_LOG.ams   SWEEPERR.ams
+DDE_USER_INCIDENT_TYPE.ams         HM_MESSAGE.ams         IPS_FILE_METADATA.ams   VIEW.ams
+DFW_CONFIG_CAPTURE.ams             HM_RECOMMENDATION.ams  IPS_PACKAGE.ams         VIEWCOL.ams
+DFW_CONFIG_ITEM.ams                HM_RUN.ams             IPS_PACKAGE_FILE.ams
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/metadata_dgif:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/metadata_pv:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/stage:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/sweep:
+
+/oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/trace:
+ORA1_dbrm_192.trc         ORA1_diag_88.trm   ORA1_lgwr_106.trc      ORA1_ora_139.trm   ORA1_svcb_98.trc
+ORA1_dbrm_192.trm         ORA1_fenc_128.trc  ORA1_lgwr_106.trm      ORA1_ora_149.trc   ORA1_svcb_98.trm
+ORA1_dbrm_94.trc          ORA1_fenc_128.trm  ORA1_lgwr_204.trc      ORA1_ora_149.trm   ORA1_tt02_265.trc
+ORA1_dbrm_94.trm          ORA1_fenc_226.trc  ORA1_lgwr_204.trm      ORA1_ora_162.trc   ORA1_tt02_265.trm
+ORA1_dia0_102.trc         ORA1_fenc_226.trm  ORA1_mmon_130.trc      ORA1_ora_162.trm   ORA1_vkrm_194.trc
+ORA1_dia0_102.trm         ORA1_gen0_176.trc  ORA1_mmon_130.trm      ORA1_ora_237.trc   ORA1_vkrm_194.trm
+ORA1_dia0_102_base_1.trc  ORA1_gen0_176.trm  ORA1_mmon_228.trc      ORA1_ora_237.trm   ORA1_vkrm_96.trc
+ORA1_dia0_102_base_1.trm  ORA1_gen0_78.trc   ORA1_mmon_228.trm      ORA1_ora_259.trc   ORA1_vkrm_96.trm
+ORA1_dia0_200.trc         ORA1_gen0_78.trm   ORA1_ofsd_188_190.trc  ORA1_ora_259.trm   ORA1_vktm_172.trc
+ORA1_dia0_200.trm         ORA1_lg00_110.trc  ORA1_ofsd_188_190.trm  ORA1_ora_64.trc    ORA1_vktm_172.trm
+ORA1_dia0_200_base_1.trc  ORA1_lg00_110.trm  ORA1_ofsd_90_92.trc    ORA1_ora_64.trm    ORA1_vktm_74.trc
+ORA1_dia0_200_base_1.trm  ORA1_lg01_114.trc  ORA1_ofsd_90_92.trm    ORA1_svcb_196.trc  ORA1_vktm_74.trm
+ORA1_diag_88.trc          ORA1_lg01_114.trm  ORA1_ora_139.trc       ORA1_svcb_196.trm  alert_ORA1.log
 
 /oracledata/u01/app/oracle/diag/tnslsnr:
-3a6b399b4881  e7f9bf09bc91
+3a6b399b4881
 
 /oracledata/u01/app/oracle/diag/tnslsnr/3a6b399b4881:
 listener
@@ -164,45 +237,6 @@ ADR_CONTROL.ams  ADR_INVALIDATION.ams  INC_METER_IMPT_DEF.ams  INC_METER_PK_IMPT
 /oracledata/u01/app/oracle/diag/tnslsnr/3a6b399b4881/listener/trace:
 listener.log
 
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91:
-listener
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener:
-alert  cdump  incident  incpkg  lck  log  metadata  metadata_dgif  metadata_pv  stage  sweep  trace
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/alert:
-log.xml
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/cdump:
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/incident:
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/incpkg:
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/lck:
-AM_1096102193_3488045378.lck  AM_1096102262_3454819329.lck  AM_1744845641_3861997533.lck  AM_3216668543_3129272988.lck
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/log:
-debug  test
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/log/debug:
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/log/test:
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/metadata:
-ADR_CONTROL.ams  ADR_INVALIDATION.ams  INC_METER_IMPT_DEF.ams  INC_METER_PK_IMPTS.ams
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/metadata_dgif:
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/metadata_pv:
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/stage:
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/sweep:
-
-/oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/trace:
-listener.log
-
 /oracledata/u01/app/oracle/product:
 12.2.0
 
@@ -213,7 +247,8 @@ dbhome_1
 dbs
 
 /oracledata/u01/app/oracle/product/12.2.0/dbhome_1/dbs:
-hc_ORCLCDB.dat  initORCLCDB.ora  lkORCL  lkORCLCDB  orapwORCLCDB  spfileORCLCDB.ora
+hc_ORA1.dat     initORA1.ora     lkORA1  lkORCLCDB       spfileORCLCDB.ora
+hc_ORCLCDB.dat  initORCLCDB.ora  lkORCL  spfileORA1.ora
 
 /oracledata/u02:
 app
@@ -225,32 +260,31 @@ oracle
 audit  oradata
 
 /oracledata/u02/app/oracle/audit:
-ORCLCDB
+ORA1
 
-/oracledata/u02/app/oracle/audit/ORCLCDB:
-ORCLCDB_m000_380_20190818135112542631143795.aud  ORCLCDB_ora_302_20190818135025254284143795.aud
-ORCLCDB_m000_499_20170809103337606083143795.aud  ORCLCDB_ora_326_20170809103247900008143795.aud
-ORCLCDB_m006_427_20170809103256721560143795.aud  ORCLCDB_ora_338_20190818135032766605143795.aud
-ORCLCDB_ora_141_20170809103205447791143795.aud   ORCLCDB_ora_341_20170809103250581896143795.aud
-ORCLCDB_ora_141_20190818135006387140143795.aud   ORCLCDB_ora_402_20190818135133773375143795.aud
-ORCLCDB_ora_146_20170809103210222390143795.aud   ORCLCDB_ora_439_20170809103316667886143795.aud
-ORCLCDB_ora_148_20190818135010667558143795.aud   ORCLCDB_ora_49_20170809103205405299143795.aud
-ORCLCDB_ora_149_20170809103210298013143795.aud   ORCLCDB_ora_514_20170809103350724928143795.aud
-ORCLCDB_ora_162_20170809103233991706143795.aud   ORCLCDB_ora_537_20170809103450877872143795.aud
-ORCLCDB_ora_196_20190818135012918903143795.aud   ORCLCDB_ora_563_20170809103508050956143795.aud
-ORCLCDB_ora_239_20170809103234024482143795.aud   ORCLCDB_ora_584_20170809103551032073143795.aud
-ORCLCDB_ora_244_20170809103238955943143795.aud   ORCLCDB_ora_66_20190818135006365724143795.aud
+/oracledata/u02/app/oracle/audit/ORA1:
+ORA1_ora_139_20190818141623670637143795.aud      ORCLCDB_ora_149_20170809103210298013143795.aud
+ORA1_ora_146_20190818141628147948143795.aud      ORCLCDB_ora_162_20170809103233991706143795.aud
+ORA1_ora_149_20190818141628180087143795.aud      ORCLCDB_ora_239_20170809103234024482143795.aud
+ORA1_ora_162_20190818141647573485143795.aud      ORCLCDB_ora_244_20170809103238955943143795.aud
+ORA1_ora_237_20190818141647600277143795.aud      ORCLCDB_ora_326_20170809103247900008143795.aud
+ORA1_ora_254_20190818141647790772143795.aud      ORCLCDB_ora_341_20170809103250581896143795.aud
+ORA1_ora_259_20190818141651934578143795.aud      ORCLCDB_ora_439_20170809103316667886143795.aud
+ORA1_ora_64_20190818141623646561143795.aud       ORCLCDB_ora_49_20170809103205405299143795.aud
+ORCLCDB_m000_499_20170809103337606083143795.aud  ORCLCDB_ora_514_20170809103350724928143795.aud
+ORCLCDB_m006_427_20170809103256721560143795.aud  ORCLCDB_ora_537_20170809103450877872143795.aud
+ORCLCDB_ora_141_20170809103205447791143795.aud   ORCLCDB_ora_563_20170809103508050956143795.aud
+ORCLCDB_ora_146_20170809103210222390143795.aud   ORCLCDB_ora_584_20170809103551032073143795.aud
 
 /oracledata/u02/app/oracle/oradata:
-ORCL  ORCLCDB
+ORA1  ORCL  ORCLCDB
 
-/oracledata/u02/app/oracle/oradata/ORCLCDB:
-cntrlORCLCDB.dbf  orclpdb1  pdbseed  sysaux01.dbf  system01.dbf  temp01.dbf  undotbs01.dbf  xdb01.dbf
+/oracledata/u02/app/oracle/oradata/ORA1:
+cntrlORA1.dbf  orclpdb1  pdbseed  sysaux01.dbf  system01.dbf  temp01.dbf  undotbs01.dbf  xdb01.dbf
 
-/oracledata/u02/app/oracle/oradata/ORCLCDB/orclpdb1:
-sysaux01.dbf  system01.dbf  temp01.dbf  users01.dbf  xdb01.dbf
+/oracledata/u02/app/oracle/oradata/ORA1/orclpdb1:
 
-/oracledata/u02/app/oracle/oradata/ORCLCDB/pdbseed:
+/oracledata/u02/app/oracle/oradata/ORA1/pdbseed:
 cdb1_pdb0.xml  sysaux01.dbf  system01.dbf  temp01.dbf  xdb01.dbf
 
 /oracledata/u03:
@@ -263,19 +297,19 @@ oracle
 fast_recovery_area
 
 /oracledata/u03/app/oracle/fast_recovery_area:
-ORCLCDB
+ORA1
 
-/oracledata/u03/app/oracle/fast_recovery_area/ORCLCDB:
-archivelog  cntrlORCLCDB2.dbf  onlinelog
+/oracledata/u03/app/oracle/fast_recovery_area/ORA1:
+archivelog  cntrlORA12.dbf  onlinelog
 
-/oracledata/u03/app/oracle/fast_recovery_area/ORCLCDB/archivelog:
+/oracledata/u03/app/oracle/fast_recovery_area/ORA1/archivelog:
 2017_08_09  2019_08_18
 
-/oracledata/u03/app/oracle/fast_recovery_area/ORCLCDB/archivelog/2017_08_09:
+/oracledata/u03/app/oracle/fast_recovery_area/ORA1/archivelog/2017_08_09:
 
-/oracledata/u03/app/oracle/fast_recovery_area/ORCLCDB/archivelog/2019_08_18:
+/oracledata/u03/app/oracle/fast_recovery_area/ORA1/archivelog/2019_08_18:
 
-/oracledata/u03/app/oracle/fast_recovery_area/ORCLCDB/onlinelog:
+/oracledata/u03/app/oracle/fast_recovery_area/ORA1/onlinelog:
 
 /oracledata/u04:
 app
@@ -307,68 +341,88 @@ linux-home:~/ora # du -h /oracledata/
 0       /oracledata/u01/app/oracle/diag/tnslsnr/3a6b399b4881/listener/stage
 268K    /oracledata/u01/app/oracle/diag/tnslsnr/3a6b399b4881/listener
 268K    /oracledata/u01/app/oracle/diag/tnslsnr/3a6b399b4881
-4.0K    /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/trace
-8.0K    /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/alert
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/incident
-256K    /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/metadata
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/metadata_pv
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/metadata_dgif
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/incpkg
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/sweep
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/lck
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/cdump
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/stage
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/log/debug
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/log/test
-0       /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener/log
-268K    /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91/listener
-268K    /oracledata/u01/app/oracle/diag/tnslsnr/e7f9bf09bc91
-536K    /oracledata/u01/app/oracle/diag/tnslsnr
-612K    /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/trace
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log/hcs
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log/imdb
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log/ddl
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log/test
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log/debug
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/log
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/ORCL
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/incpkg
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/metadata_pv
-3.6M    /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/metadata
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/hm
-248K    /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/alert
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/incident
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/metadata_dgif
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/cdump
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/lck
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/ir
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/sweep
-0       /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB/stage
-4.4M    /oracledata/u01/app/oracle/diag/rdbms/orclcdb/ORCLCDB
-4.4M    /oracledata/u01/app/oracle/diag/rdbms/orclcdb
-4.4M    /oracledata/u01/app/oracle/diag/rdbms
-5.0M    /oracledata/u01/app/oracle/diag
-28K     /oracledata/u01/app/oracle/product/12.2.0/dbhome_1/dbs
-28K     /oracledata/u01/app/oracle/product/12.2.0/dbhome_1
-28K     /oracledata/u01/app/oracle/product/12.2.0
-28K     /oracledata/u01/app/oracle/product
-5.0M    /oracledata/u01/app/oracle
-5.0M    /oracledata/u01/app
-5.0M    /oracledata/u01
-741M    /oracledata/u02/app/oracle/oradata/ORCLCDB/orclpdb1
-794M    /oracledata/u02/app/oracle/oradata/ORCLCDB/pdbseed
-3.2G    /oracledata/u02/app/oracle/oradata/ORCLCDB
+4.0K    /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/trace
+4.0K    /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/alert
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/incident
+256K    /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/metadata
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/metadata_pv
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/metadata_dgif
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/incpkg
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/sweep
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/lck
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/cdump
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/stage
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/log/debug
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/log/test
+0       /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener/log
+264K    /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab/listener
+264K    /oracledata/u01/app/oracle/diag/tnslsnr/4fec17a32fab
+532K    /oracledata/u01/app/oracle/diag/tnslsnr
+320K    /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/trace
+136K    /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/alert
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/incident
+3.6M    /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/metadata
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/metadata_pv
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/metadata_dgif
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/hm
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ir
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/incpkg
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/sweep
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/lck
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/cdump
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/stage
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log/debug
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log/test
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log/ddl
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log/imdb
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log/hcs
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/log
+412K    /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/trace
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log/hcs
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log/imdb
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log/ddl
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log/test
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log/debug
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/log
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/ORCL
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/incpkg
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/metadata_pv
+3.6M    /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/metadata
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/hm
+172K    /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/alert
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/incident
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/metadata_dgif
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/cdump
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/lck
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/ir
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/sweep
+0       /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB/stage
+4.2M    /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1/ORCLCDB
+8.1M    /oracledata/u01/app/oracle/diag/rdbms/ora1/ORA1
+8.1M    /oracledata/u01/app/oracle/diag/rdbms/ora1
+8.1M    /oracledata/u01/app/oracle/diag/rdbms
+8.7M    /oracledata/u01/app/oracle/diag
+36K     /oracledata/u01/app/oracle/product/12.2.0/dbhome_1/dbs
+36K     /oracledata/u01/app/oracle/product/12.2.0/dbhome_1
+36K     /oracledata/u01/app/oracle/product/12.2.0
+36K     /oracledata/u01/app/oracle/product
+8.7M    /oracledata/u01/app/oracle
+8.7M    /oracledata/u01/app
+8.7M    /oracledata/u01
+741M    /oracledata/u02/app/oracle/oradata/ORA1/orclpdb1
+794M    /oracledata/u02/app/oracle/oradata/ORA1/pdbseed
+3.2G    /oracledata/u02/app/oracle/oradata/ORA1
 3.2G    /oracledata/u02/app/oracle/oradata
-136K    /oracledata/u02/app/oracle/audit/ORCLCDB
-136K    /oracledata/u02/app/oracle/audit
+128K    /oracledata/u02/app/oracle/audit/ORA1
+128K    /oracledata/u02/app/oracle/audit
 3.2G    /oracledata/u02/app/oracle
 3.2G    /oracledata/u02/app
 3.2G    /oracledata/u02
-0       /oracledata/u03/app/oracle/fast_recovery_area/ORCLCDB/onlinelog
-0       /oracledata/u03/app/oracle/fast_recovery_area/ORCLCDB/archivelog/2017_08_09
-0       /oracledata/u03/app/oracle/fast_recovery_area/ORCLCDB/archivelog/2019_08_18
-0       /oracledata/u03/app/oracle/fast_recovery_area/ORCLCDB/archivelog
-8.5M    /oracledata/u03/app/oracle/fast_recovery_area/ORCLCDB
+0       /oracledata/u03/app/oracle/fast_recovery_area/ORA1/onlinelog
+0       /oracledata/u03/app/oracle/fast_recovery_area/ORA1/archivelog/2017_08_09
+0       /oracledata/u03/app/oracle/fast_recovery_area/ORA1/archivelog/2019_08_18
+0       /oracledata/u03/app/oracle/fast_recovery_area/ORA1/archivelog
+8.5M    /oracledata/u03/app/oracle/fast_recovery_area/ORA1
 8.5M    /oracledata/u03/app/oracle/fast_recovery_area
 8.5M    /oracledata/u03/app/oracle
 8.5M    /oracledata/u03/app
@@ -378,3 +432,4 @@ linux-home:~/ora # du -h /oracledata/
 31M     /oracledata/u04/app
 31M     /oracledata/u04
 3.3G    /oracledata/
+linux-home:~/ora #

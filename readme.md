@@ -210,37 +210,122 @@ Now that we have all prerequisits, we start the container as a
 background process as *root* with this command:
 
 ````sh
-podman run -d -it --name oradb -p 1521:1521 -v /oracledata:/ORCL store/oracle/database-enterprise:12.2.0.1-slim
+cd ~/ora
+podman run -d -it --name oradb --env-file db.env -p 1521:1521 -v /oracledata:/ORCL store/oracle/database-enterprise:12.2.0.1-slim
 ````
 
 Where
 
 * -d run as daemon
-* --name name the container `oradb`
-* -p publish port `1521`
-* -v map the local data directory `/oracledata` into the container
 * -it run the container interactively allocating a tty
+* --name name the container `oradb`
+* --env-file uses the configuration from [db.env](db.env)
+* -p publish the container's port `1521` localy on the same port
+* -v map the local data directory `/oracledata` into the container
 
 In the shell for example:
 
 ````sh
-linux-home:~/ora # podman run -d -it --name oradb -p 1521:1521 -v /oracledata:/ORCL store/oracle/database-enterprise:12.2.0.1-slim
+linux-home:~ # cd ~/ora
+linux-home:~/ora # podman run -d -it --name oradb --env-file db.env -p 1521:1521 -v /oracledata:/ORCL store/oracle/database-enterprise:12.2.0.1-slim
+Error: error creating container storage: the container name "oradb" is already in use by "e7f9bf09bc91472b2c5082a6ab68dd00c157a5d9134e6fedf92577e37f9b5955". You have to remove that container to be able to reuse that name.: that name is already in use
+linux-home:~/ora # podman rm oradb
 e7f9bf09bc91472b2c5082a6ab68dd00c157a5d9134e6fedf92577e37f9b5955
+linux-home:~/ora # podman run -d -it --name oradb --env-file db.env -p 1521:1521 -v /oracledata:/ORCL store/oracle/database-enterprise:12.2.0.1-slim
+4fec17a32fab846c9c8918e49234577829244956781c309f5b5fef735216ab45
 linux-home:~/ora # podman ps
 CONTAINER ID  IMAGE                                                     COMMAND               CREATED        STATUS            PORTS                   NAMES
-e7f9bf09bc91  docker.io/store/oracle/database-enterprise:12.2.0.1-slim  /bin/sh -c /bin/b...  8 seconds ago  Up 7 seconds ago  0.0.0.0:1521->1521/tcp  oradb
-linux-home:~/ora # podman ps
-CONTAINER ID  IMAGE                                                     COMMAND               CREATED        STATUS            PORTS                   NAMES
-e7f9bf09bc91  docker.io/store/oracle/database-enterprise:12.2.0.1-slim  /bin/sh -c /bin/b...  2 minutes ago  Up 2 minutes ago  0.0.0.0:1521->1521/tcp  oradb
+4fec17a32fab  docker.io/store/oracle/database-enterprise:12.2.0.1-slim  /bin/sh -c /bin/b...  8 seconds ago  Up 8 seconds ago  0.0.0.0:1521->1521/tcp  oradb
+````
+
+````sh
 linux-home:~/ora # ls -R /oracledata/
 ...
 linux-home:~/ora # du -h /oracledata/
 ...
-linux-home:~/ora #
 ````
 
 as it is quite long, see [oracledata.txt](oracledata.txt) for the output of `ls -R /oracledata/`
-and `du -h /oracledata/` after 2 minutes of runtime.
+and `du -h /oracledata/`.
+
+## Stoping and Restarting the DBMS
+
+This command stops the container after some time,
+if it shuts down the DBMS properly
+needs to be examined, so **handle with care**:
+
+````sh
+linux-home:~/ora # podman stop oradb
+4fec17a32fab846c9c8918e49234577829244956781c309f5b5fef735216ab45
+linux-home:~/ora # podman ps
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+linux-home:~/ora #
+````
+
+To restart the container
+
+````sh
+linux-home:~/ora # podman start oradb
+oradb
+linux-home:~/ora # podman ps
+CONTAINER ID  IMAGE                                                     COMMAND               CREATED        STATUS            PORTS                   NAMES
+4fec17a32fab  docker.io/store/oracle/database-enterprise:12.2.0.1-slim  /bin/sh -c /bin/b...  9 minutes ago  Up 4 seconds ago  0.0.0.0:1521->1521/tcp  oradb
+linux-home:~/ora # podman exec -it oradb bash -c "source /home/oracle/.bashrc; sqlplus system/welcome1"
+
+SQL*Plus: Release 12.2.0.1.0 Production on Sun Aug 18 14:25:45 2019
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+Last Successful login time: Sun Aug 18 2019 14:19:24 +00:00
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+
+SQL> select 1 from dual;
+
+         1
+----------
+         1
+
+SQL> exit
+Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+linux-home:~/ora #
+````
+
+## Connecting with the DBMS Server
+
+We start the provided sqlplus in the runing container named `oradb` logging in
+as `system` with the password `welcome1` that we specified in the [db.env](db.env) file:
+
+````sh
+podman exec -it oradb bash -c "source /home/oracle/.bashrc; sqlplus system/welcome1"
+````
+
+in the shell:
+
+````sh
+linux-home:~/ora # podman exec -it oradb bash -c "source /home/oracle/.bashrc; sqlplus system/welcome1"
+
+SQL*Plus: Release 12.2.0.1.0 Production on Sun Aug 18 14:19:24 2019
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+Last Successful login time: Thu Jan 26 2017 16:02:57 +00:00
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+
+SQL> select 1, 2 from dual
+  2  ;
+
+         1          2
+---------- ----------
+         1          2
+
+SQL> exit
+Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+linux-home:~/ora #
+````
 
 ## Resources
 
