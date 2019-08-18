@@ -16,7 +16,7 @@ running containers.
 * Get an Oracle License for Development
 * Find and checkout the image at [Oracle Database Enterprise Edition](https://hub.docker.com/_/oracle-database-enterprise-edition?tab=description)
 * `sudo -i` as we need root rights here
-* as root login with podman on docker.io
+* as root login with podman on docker.io: `podman login docker.io`
 * and then `podman pull store/oracle/database-enterprise:12.2.0.1-slim` as root, finally.
 
 ### In Detail
@@ -135,6 +135,34 @@ lercher@linux-pm81:~>
 ````
 
 That's right, we don't have any images as unprivileged user.
+
+### Full Story (August 2019)
+
+````sh
+lercher@linux-home:~> sudo podman version
+[sudo] password for root:
+Version:            1.4.4
+RemoteAPI Version:  1
+Go Version:         go1.12.6
+OS/Arch:            linux/amd64
+lercher@linux-home:~> sudo -i
+linux-home:~ # podman login docker.io
+Username: lercher
+Password:
+Login Succeeded!
+linux-home:~ # podman pull store/oracle/database-enterprise:12.2.0.1-slim
+Trying to pull docker.io/store/oracle/database-enterprise:12.2.0.1-slim...Getting image source signatures
+Copying blob fc60a1a28025 done
+Copying blob 4ce27fe12c04 done
+Copying blob be0a1f1e8dfd done
+Copying blob 9d3556e8e792 done
+Copying blob 0c32e4ed872e done
+Copying config 27c9559d36 done
+Writing manifest to image destination
+Storing signatures
+27c9559d36ec85fdaa42111ebc55076a63e842ddbe67e0849cdc59b4f6a6f7a1
+linux-home:~ #
+````
 
 ## Resources
 
