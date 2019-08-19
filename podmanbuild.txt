@@ -1,0 +1,106 @@
+lercher@linux-ypi3:~/src/github.com/lercher/podman-oracle-go> podman build -t oraclient:19.3 .
+STEP 1: FROM alpine:latest
+STEP 2: RUN apk update
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/community/x86_64/APKINDEX.tar.gz
+v3.10.1-110-g1e85ba7cf4 [http://dl-cdn.alpinelinux.org/alpine/v3.10/main]
+v3.10.1-110-g1e85ba7cf4 [http://dl-cdn.alpinelinux.org/alpine/v3.10/community]
+OK: 10337 distinct packages available
+b5adeaf4f1c38a13b5c737e6ff9feb938fc91c4b078e9bb719cb7552be979a01
+STEP 3: RUN apk --no-cache add ca-certificates wget
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/community/x86_64/APKINDEX.tar.gz
+(1/2) Installing ca-certificates (20190108-r0)
+(2/2) Installing wget (1.20.3-r0)
+Executing busybox-1.30.1-r2.trigger
+Executing ca-certificates-20190108-r0.trigger
+OK: 7 MiB in 16 packages
+34722d2d637cb31005aed7e2b940360bde398281772893be8d5ae0a4414c8e7c
+STEP 4: RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
+fb144128b9062000f9035184b5841feeaef8f7948a6ba7317079fa05a294cf48
+STEP 5: RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-2.30-r0.apk
+--2019-08-19 18:34:31--  https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-2.30-r0.apk
+Resolving github.com... 140.82.118.4
+Connecting to github.com|140.82.118.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://github-production-release-asset-2e65be.s3.amazonaws.com/33333969/946dab00-c1b4-11e9-987e-da37e3103482?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20190819%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190819T183431Z&X-Amz-Expires=300&X-Amz-Signature=7b7694e272aca704177e5f4e5efbe5771a69e7f9012be52c67a20d49736a9bb5&X-Amz-SignedHeaders=host&actor_id=0&response-content-disposition=attachment%3B%20filename%3Dglibc-2.30-r0.apk&response-content-type=application%2Fvnd.android.package-archive [following]
+--2019-08-19 18:34:31--  https://github-production-release-asset-2e65be.s3.amazonaws.com/33333969/946dab00-c1b4-11e9-987e-da37e3103482?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20190819%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190819T183431Z&X-Amz-Expires=300&X-Amz-Signature=7b7694e272aca704177e5f4e5efbe5771a69e7f9012be52c67a20d49736a9bb5&X-Amz-SignedHeaders=host&actor_id=0&response-content-disposition=attachment%3B%20filename%3Dglibc-2.30-r0.apk&response-content-type=application%2Fvnd.android.package-archive
+Resolving github-production-release-asset-2e65be.s3.amazonaws.com... 52.216.225.224
+Connecting to github-production-release-asset-2e65be.s3.amazonaws.com|52.216.225.224|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4408199 (4.2M) [application/vnd.android.package-archive]
+Saving to: 'glibc-2.30-r0.apk'
+
+glibc-2.30-r0.apk   100%[===================>]   4.20M  1.07MB/s    in 4.3s    
+
+2019-08-19 18:34:37 (1004 KB/s) - 'glibc-2.30-r0.apk' saved [4408199/4408199]
+
+ede27c61dbb5ff165cab99167a2f8acea76eb5770fcdd7d87982139f65ed5792
+STEP 6: RUN apk add --no-cache glibc-2.30-r0.apk libaio glibc
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/community/x86_64/APKINDEX.tar.gz
+(1/2) Installing glibc (2.30-r0)
+(2/2) Installing libaio (0.3.111-r0)
+OK: 16 MiB in 18 packages
+cd2f65bc341f69be83c56d83aafbc49f37727ff9147236aa9693738d201bc5db
+STEP 7: COPY instantclient/*.zip .
+60b49a67e24f223561b2c246dfc2cc84fb157699d73c2b08bc85359f7d77c177
+STEP 8: RUN unzip instantclient-basiclite-linux.x64-*.zip -d instantclient
+unzip: can't change directory to 'instantclient': No such file or directory
+Error: error building at STEP "RUN unzip instantclient-basiclite-linux.x64-*.zip -d instantclient": error while running runtime: exit status 1
+lercher@linux-ypi3:~/src/github.com/lercher/podman-oracle-go> podman build -t oraclient:19.3 .
+STEP 1: FROM alpine:latest
+STEP 2: RUN apk update
+--> Using cache b5adeaf4f1c38a13b5c737e6ff9feb938fc91c4b078e9bb719cb7552be979a01
+STEP 3: RUN apk --no-cache add ca-certificates wget
+--> Using cache 34722d2d637cb31005aed7e2b940360bde398281772893be8d5ae0a4414c8e7c
+STEP 4: RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
+--> Using cache fb144128b9062000f9035184b5841feeaef8f7948a6ba7317079fa05a294cf48
+STEP 5: RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-2.30-r0.apk
+--> Using cache ede27c61dbb5ff165cab99167a2f8acea76eb5770fcdd7d87982139f65ed5792
+STEP 6: RUN apk add --no-cache glibc-2.30-r0.apk libaio glibc
+--> Using cache cd2f65bc341f69be83c56d83aafbc49f37727ff9147236aa9693738d201bc5db
+STEP 7: COPY instantclient/*.zip .
+--> Using cache 60b49a67e24f223561b2c246dfc2cc84fb157699d73c2b08bc85359f7d77c177
+STEP 8: RUN unzip instantclient-basiclite-linux.x64-*.zip
+Archive:  instantclient-basiclite-linux.x64-19.3.0.0.0dbru.zip
+  inflating: instantclient_19_3/adrci
+  inflating: instantclient_19_3/BASIC_LITE_LICENSE
+  inflating: instantclient_19_3/BASIC_LITE_README
+  inflating: instantclient_19_3/genezi
+  inflating: instantclient_19_3/libclntshcore.so.19.1
+  inflating: instantclient_19_3/libclntsh.so
+  inflating: instantclient_19_3/libclntsh.so.10.1
+  inflating: instantclient_19_3/libclntsh.so.11.1
+  inflating: instantclient_19_3/libclntsh.so.12.1
+  inflating: instantclient_19_3/libclntsh.so.18.1
+  inflating: instantclient_19_3/libclntsh.so.19.1
+  inflating: instantclient_19_3/libipc1.so
+  inflating: instantclient_19_3/libmql1.so
+  inflating: instantclient_19_3/libnnz19.so
+  inflating: instantclient_19_3/libocci.so
+  inflating: instantclient_19_3/libocci.so.10.1
+  inflating: instantclient_19_3/libocci.so.11.1
+  inflating: instantclient_19_3/libocci.so.12.1
+  inflating: instantclient_19_3/libocci.so.18.1
+  inflating: instantclient_19_3/libocci.so.19.1
+  inflating: instantclient_19_3/libociicus.so
+  inflating: instantclient_19_3/libocijdbc19.so
+  inflating: instantclient_19_3/liboramysql19.so
+   creating: instantclient_19_3/network/
+  inflating: instantclient_19_3/ojdbc8.jar
+  inflating: instantclient_19_3/ucp.jar
+  inflating: instantclient_19_3/uidrvci
+  inflating: instantclient_19_3/xstreams.jar
+   creating: instantclient_19_3/network/admin/
+  inflating: instantclient_19_3/network/admin/README
+bcdaac7ba14f14c3f9b82eb88d814b5217fc6f6f70393fd120a84645458beb2d
+STEP 9: RUN mv instantclient_*_*/* /usr/lib/
+f2268408b2dfc9c3f182ef7dc8f2078aa394dedd7f3879a9261bdfaa40fa6b97
+STEP 10: RUN echo old LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+old LD_LIBRARY_PATH=
+b47655d5e0e5e10173ad96d3dfe0739aed8e97cd2b92aea27b9fbc6f7230394d
+STEP 11: ENV LD_LIBRARY_PATH /usr/lib
+STEP 12: COMMIT oraclient:19.3
+efb2f6d67cc4464e8934befee50491b64048c91efebc31c546e5c73f74ae830e
+lercher@linux-ypi3:~/src/github.com/lercher/podman-oracle-go> 

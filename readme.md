@@ -340,9 +340,54 @@ mv instantclient_12_1/* /usr/lib/
 ENV LD_LIBRARY_PATH /usr/lib
 ````
 
-See also
+For details see [Dockerfile](Dockerfile) and
 [Oracle's instructions](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html#ic_x64_inst)
 on installing the Linux client.
+
+To build it
+
+````sh
+podman build -t oraclient:19.3 .
+````
+
+In the shell with cached intermediaries:
+
+````sh
+lercher@linux-ypi3:~/src/github.com/lercher/podman-oracle-go> podman build -t oraclient:19.3 .
+STEP 1: FROM alpine:latest
+STEP 2: RUN apk update
+--> Using cache b5adeaf4f1c38a13b5c737e6ff9feb938fc91c4b078e9bb719cb7552be979a01
+STEP 3: RUN apk --no-cache add ca-certificates wget
+--> Using cache 34722d2d637cb31005aed7e2b940360bde398281772893be8d5ae0a4414c8e7c
+STEP 4: RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
+--> Using cache fb144128b9062000f9035184b5841feeaef8f7948a6ba7317079fa05a294cf48
+STEP 5: RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-2.30-r0.apk
+--> Using cache ede27c61dbb5ff165cab99167a2f8acea76eb5770fcdd7d87982139f65ed5792
+STEP 6: RUN apk add --no-cache glibc-2.30-r0.apk libaio glibc
+--> Using cache cd2f65bc341f69be83c56d83aafbc49f37727ff9147236aa9693738d201bc5db
+STEP 7: COPY instantclient/*.zip .
+--> Using cache 60b49a67e24f223561b2c246dfc2cc84fb157699d73c2b08bc85359f7d77c177
+STEP 8: RUN unzip instantclient-basiclite-linux.x64-*.zip
+--> Using cache bcdaac7ba14f14c3f9b82eb88d814b5217fc6f6f70393fd120a84645458beb2d
+STEP 9: RUN mv instantclient_*_*/* /usr/lib/
+--> Using cache f2268408b2dfc9c3f182ef7dc8f2078aa394dedd7f3879a9261bdfaa40fa6b97
+STEP 10: ENV LD_LIBRARY_PATH /usr/lib
+STEP 11: COMMIT oraclient:19.3
+1e76f8d30cf57d4f82e7d838a5046c4d1d434a29e3cec6c8e879a837dfe93a10
+lercher@linux-ypi3:~/src/github.com/lercher/podman-oracle-go> 
+````
+
+see [podmanbuild.txt](podmanbuild.txt) for the full log.
+
+### Size
+
+````sh
+lercher@linux-ypi3:~/src/github.com/lercher/podman-oracle-go> podman images
+REPOSITORY                 TAG      IMAGE ID       CREATED         SIZE
+localhost/oraclient        19.3     1e76f8d30cf5   3 minutes ago   288 MB
+<none>                     <none>   efb2f6d67cc4   4 minutes ago   288 MB
+docker.io/library/alpine   latest   b7b28af77ffe   5 weeks ago     5.85 MB
+````
 
 ## Resources
 
@@ -352,3 +397,5 @@ on installing the Linux client.
 * [Oracle Instant Client Downloads](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
   for Linux 64bit. We need the "Basic Light Package" and the "SDK Package" as zip files.
 * [Oracle's client installation instructions](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html#ic_x64_inst)
+* [Installing glibc on Alpine Linux](https://github.com/sgerrand/alpine-pkg-glibc),
+  because the oracle client insists on glibc acording to documentation.
