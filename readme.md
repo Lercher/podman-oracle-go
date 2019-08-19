@@ -389,6 +389,12 @@ localhost/oraclient        19.3     1e76f8d30cf5   3 minutes ago   288 MB
 docker.io/library/alpine   latest   b7b28af77ffe   5 weeks ago     5.85 MB
 ````
 
+Opening a shell
+
+````sh
+podman run -it localhost/oraclient:19.3
+````
+
 ## Resources
 
 * [Nutzung von Oracle Datenbanken in Docker Containern](https://apex.oracle.com/pls/apex/germancommunities/dbacommunity/tipp/6241/index.html) by Ralf Durben (in German)
