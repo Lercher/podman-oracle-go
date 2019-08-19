@@ -327,10 +327,28 @@ Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64
 linux-home:~/ora #
 ````
 
+## Building an Image With the Instaclient light and the SDK
+
+This is our main topic, We want to build an image like that
+with the current version (19.3 in August 2019):
+
+````txt
+FROM something:small
+apk --no-cache add libaio glibc-2.29-r0.apk
+Copy/unzip instantclient-basic-linux-12.1.0.2.0.zip and sdk
+mv instantclient_12_1/* /usr/lib/
+ENV LD_LIBRARY_PATH /usr/lib
+````
+
+See also
+[Oracle's instructions](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html#ic_x64_inst)
+on installing the Linux client.
+
 ## Resources
 
 * [Nutzung von Oracle Datenbanken in Docker Containern](https://apex.oracle.com/pls/apex/germancommunities/dbacommunity/tipp/6241/index.html) by Ralf Durben (in German)
 * [Docker Hub](https://hub.docker.com/)
 * [Instructions (copy)](ora.md) on the DBMS image's use.
-* [Oracle Instant Client](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
+* [Oracle Instant Client Downloads](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
   for Linux 64bit. We need the "Basic Light Package" and the "SDK Package" as zip files.
+* [Oracle's client installation instructions](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html#ic_x64_inst)
