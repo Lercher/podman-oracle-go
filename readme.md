@@ -332,3 +332,5 @@ linux-home:~/ora #
 * [Nutzung von Oracle Datenbanken in Docker Containern](https://apex.oracle.com/pls/apex/germancommunities/dbacommunity/tipp/6241/index.html) by Ralf Durben (in German)
 * [Docker Hub](https://hub.docker.com/)
 * [Instructions (copy)](ora.md) on the DBMS image's use.
+* [Oracle Instant Client](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
+  for Linux 64bit. We need the "Basic Light Package" and the "SDK Package" as zip files.
