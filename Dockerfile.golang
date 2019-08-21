@@ -1,0 +1,11 @@
+# podman build -t go-oracle:1.12-19.3 -f Dockerfile.golang .
+FROM golang:latest
+RUN go version
+RUN apt-get update && apt-get install libaio1
+COPY instantclient/*.zip .
+RUN apt-get install unzip
+RUN unzip instantclient-basiclite-linux.x64-*.zip
+RUN mv instantclient_*_*/* /usr/lib/
+ENV LD_LIBRARY_PATH /usr/lib
+RUN ping -c 2 linux-home
+RUN go get github.com/mattn/go-oci8 

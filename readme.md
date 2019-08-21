@@ -379,15 +379,22 @@ lercher@linux-ypi3:~/src/github.com/lercher/podman-oracle-go>
 
 see [podmanbuild.txt](podmanbuild.txt) for the full log.
 
-### Size
+### Sizes
+
+The instantclient zip uncompressed is aprox. 110MB, wget and gclib
+add some 15MB. Here is, what podman thinks about its image
+sizes:
 
 ````sh
-lercher@linux-ypi3:~/src/github.com/lercher/podman-oracle-go> podman images
-REPOSITORY                 TAG      IMAGE ID       CREATED         SIZE
-localhost/oraclient        19.3     1e76f8d30cf5   3 minutes ago   288 MB
-<none>                     <none>   efb2f6d67cc4   4 minutes ago   288 MB
-docker.io/library/alpine   latest   b7b28af77ffe   5 weeks ago     5.85 MB
+ercher@linux-ypi3:~/src/github.com/lercher/podman-oracle-go> podman images
+REPOSITORY                 TAG      IMAGE ID       CREATED          SIZE
+localhost/oraclient        19.3     4c7ebc1598c6   29 seconds ago   288 MB
+localhost/gclib            2.30     aa2b85db85ff   3 minutes ago    22.2 MB
+docker.io/library/alpine   latest   b7b28af77ffe   5 weeks ago      5.85 MB
 ````
+
+It's quite disillusioning that we get a 0.3GB image just for the
+pure database connectivity libraries. But who am I to judge.
 
 Opening a shell
 
