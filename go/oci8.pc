@@ -1,0 +1,9 @@
+prefix=~/bin/instantclient_19_3
+includedir=${prefix}/sdk/include
+libdir=${prefix}
+
+Name: oci8
+Description: Oracle Instant Client
+Version: 19.3
+Cflags: -I${includedir}
+Libs: -L${libdir} -lclntsh
