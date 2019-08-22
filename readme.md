@@ -402,6 +402,17 @@ Opening a shell
 podman run -it localhost/oraclient:19.3
 ````
 
+## Podman Pull Error
+
+Just in case a `podman pull alpine:latest` errors at `lchown`, try:
+
+````sh
+sudo touch /etc/sub{u,g}id
+sudo usermod --add-subuids 10000-75535 $(whoami)
+sudo usermod --add-subgids 10000-75535 $(whoami)
+rm /run/user/$(id -u)/libpod/pause.pid
+````
+
 ## Resources
 
 * [Nutzung von Oracle Datenbanken in Docker Containern](https://apex.oracle.com/pls/apex/germancommunities/dbacommunity/tipp/6241/index.html) by Ralf Durben (in German)
@@ -412,3 +423,5 @@ podman run -it localhost/oraclient:19.3
 * [Oracle's client installation instructions](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html#ic_x64_inst)
 * [Installing glibc on Alpine Linux](https://github.com/sgerrand/alpine-pkg-glibc),
   because the oracle client insists on glibc acording to documentation.
+* [podman subuids](https://github.com/containers/libpod/issues/2542#issuecomment-522932449)
+
