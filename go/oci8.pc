@@ -1,4 +1,4 @@
-prefix=~/bin/instantclient_19_3
+prefix=/home/lercher/bin/instantclient_19_3
 includedir=${prefix}/sdk/include
 libdir=${prefix}
 
